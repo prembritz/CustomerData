@@ -33,7 +33,7 @@ public class EnquiryDBConfiguration extends Application {
 	private static DataSource cmDBPool;
 	private static HashMap<String, String> ActualTableName;
 	private static HashMap<String, String> ChannelGlobalParameters;
-	private static HashMap<String, String> GlobalParameters;
+	//private static HashMap<String, String> GlobalParameters;
 	private String ChannelDBSchema;
 
 	public EnquiryDBConfiguration() {
@@ -47,22 +47,22 @@ public class EnquiryDBConfiguration extends Application {
 		
 		AccountDetails.setDBPool(cmDBPool);
 		AccountDetails.setExternalTablenames(ActualTableName);
-		AccountDetails.setInitiailizeGlobalParameters(GlobalParameters);
+		AccountDetails.setInitiailizeGlobalParameters(ChannelGlobalParameters);
 		
 		MpesaAgentCodevalidation.setDBPool(cmDBPool);
 		MpesaAgentCodevalidation.setExternalTablenames(ActualTableName);
 		
 		AccountTransactionAdvise.setDBPool(cmDBPool);
 		AccountTransactionAdvise.setExternalTablenames(ActualTableName);
-		AccountTransactionAdvise.setInitiailizeGlobalParameters(GlobalParameters);
+		AccountTransactionAdvise.setInitiailizeGlobalParameters(ChannelGlobalParameters);
 		
 		AccountSummary.setDBPool(cmDBPool);
 		AccountSummary.setExternalTablenames(ActualTableName);
-		AccountSummary.setInitiailizeGlobalParameters(GlobalParameters);
+		AccountSummary.setInitiailizeGlobalParameters(ChannelGlobalParameters);
 		
 		AccountStatement.setDBPool(cmDBPool);
 		AccountStatement.setExternalTablenames(ActualTableName);
-		AccountStatement.setInitiailizeGlobalParameters(GlobalParameters);
+		AccountStatement.setInitiailizeGlobalParameters(ChannelGlobalParameters);
 		
 		DealRateDetails.setDBPool(cmDBPool);
 		DealRateDetails.setExternalTablenames(ActualTableName);
