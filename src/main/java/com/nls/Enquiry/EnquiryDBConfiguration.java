@@ -154,7 +154,7 @@ public class EnquiryDBConfiguration extends Application {
 				dbConnection = cmDBPool.getConnection();
 
 				InitializeUnitIDconfigs(dbConnection);
-				InitiailizeGlobalParameters(dbConnection);
+				//InitiailizeGlobalParameters(dbConnection);
 				InitiailizeChannelGlobalParameters(dbConnection,ChannelDBSchema);
 				
 			} catch (Exception e) {
@@ -192,21 +192,6 @@ public class EnquiryDBConfiguration extends Application {
 		System.out.println("Actual table is print ::::[" + ActualTableName + "]");
 	}
 
-	private void InitiailizeGlobalParameters(Connection dbConnection) throws SQLException {
-		GlobalParameters = new LinkedHashMap<String, String>();
-
-		PreparedStatement GlobalPs = dbConnection.prepareStatement("select * from global$parameters ");
-		ResultSet GlobalRs = GlobalPs.executeQuery();
-		while (GlobalRs.next()) {
-			GlobalParameters.put(GlobalRs.getString("NAME"), GlobalRs.getString("VALUE"));
-		}
-		GlobalRs.close();
-		GlobalPs.close();
-
-		// return GlobalParameters;
-
-	}
-	
 	private void InitiailizeChannelGlobalParameters(Connection dbConnection,String channelschema) throws SQLException {
 		ChannelGlobalParameters = new LinkedHashMap<String, String>();
 
